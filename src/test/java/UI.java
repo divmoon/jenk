@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Selenide.*;
 
-public class selenide {
+public class UI {
 
     @BeforeAll
     public static void setUp() {
@@ -23,14 +23,14 @@ public class selenide {
         SelenideElement loginButton = $("[type=\"submit\"]");
 
         usernameField.setValue("tomsmith");
-        sleep(25000);
+        sleep(10000);
         passwordField.setValue("SuperSecretPassword!");
         loginButton.click();
         $("#flash").shouldBe(Condition.visible);
     }
 
     @Test
-    public void testHover() {
+    public void testChecker() {
         open("/checkboxes");
         $("[type=\"checkbox\"]").click();
         sleep(10000);

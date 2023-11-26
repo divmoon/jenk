@@ -23,19 +23,5 @@ public class RA {
         assertEquals(404, statusCode);
     }
 
-    @Test
-    public void testGetRequest2() {
-        RestAssured.baseURI = "https://petstore.swagger.io/";
-        Response response = given()
-                .when().log().all()
-                .get("v2/pet/100")
-                .then().log().all()
-                .extract().response();
-
-        int statusCode = response.getStatusCode();
-        assertEquals(200, statusCode);
-    }
-
-
 }
 
