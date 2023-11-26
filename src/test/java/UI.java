@@ -11,8 +11,10 @@ public class UI {
     @BeforeAll
     public static void setUp() {
         Configuration.browser = "firefox";
-        Configuration.baseUrl = "https://the-internet.herokuapp.com";
-        Configuration.remote = "http://95.216.214.178:8080/wd/hub";
+        Configuration.baseUrl = System.getProperty("base");
+        Configuration.remote = System.getProperty("selenoid");
+//        Configuration.baseUrl = "https://the-internet.herokuapp.com";
+//        Configuration.remote = "http://95.216.214.178:8080/wd/hub";
     }
 
     @Test
